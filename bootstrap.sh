@@ -49,8 +49,9 @@ mv $PHANTOM_JS /usr/local/share
 ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/local/bin
 phantomjs --version
 
-#echo "----Installing Database----"
-#sudo apt-get install -y mysql-server mysql-client libmysqlclient-dev
-#gem install mysql2
+echo "----Installing Database----"
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
+sudo apt-get -y install mysql-server libmysqlclient-dev
 
 echo "Successfully Installed Have Fun!!!"
