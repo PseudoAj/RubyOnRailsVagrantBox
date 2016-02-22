@@ -6,10 +6,10 @@ VAGRANTFILE_API_VERSION = "2"
 PROJECT_NAME = "RubyOnRailsVagrantBox"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-	config.vm.define PROJECT_NAME, primary: true do |config|
-    	config.vm.provider :virtualbox do |vb|
-      		vb.name = PROJECT_NAME
-    	end
+  config.vm.define PROJECT_NAME, primary: true do |config|
+    config.vm.provider :virtualbox do |vb|
+      vb.name = PROJECT_NAME
+    end
     
   config.vm.box      = 'ubuntu/trusty64'
   config.vm.hostname = 'RubyOnRailsVagrantBox'
@@ -17,5 +17,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :forwarded_port, guest: 3000, host: 3000
 
   config.vm.provision :shell, path: 'bootstrap.sh', keep_color: true
-	end
+end
+
+
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+Vagrant.configure('2') do |config|
+  config.vm.box      = 'ubuntu/trusty64'
+  config.vm.hostname = 'RubyOnRailsBagrantBox'
+
+  config.vm.network :forwarded_port, guest: 3000, host: 3000
+
+  config.vm.provision :shell, path: 'bootstrap.sh', keep_color: true
 end
