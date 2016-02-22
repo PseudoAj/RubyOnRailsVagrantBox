@@ -1,1 +1,1 @@
-{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/libsys/GitHub/RubyOnRailsVagrantBox","disabled":false,"__vagrantfile":true}}}
+{"rsync":{"/home/vagrant":{"type":"rsync","rsync_exclude":".git/","guestpath":"/home/vagrant","hostpath":"/Users/libsys/GitHub/RubyOnRailsVagrantBox","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
